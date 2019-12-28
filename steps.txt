@@ -1,0 +1,64 @@
+making backend file
+do npm init
+mk server.js
+installing middle wares
+
+require middlewares and app.use them
+set the port
+
+to check if the server runs well, app.listen(port, ()=> {logging} )
+
+require mongoose and set .env file, get the uri from mongo DB website
+and checking it
+    make a variable ATLAS_URI
+    URI STANDS FOR UNIFORM RESOURCE IDNETIFIER
+    URL STANDS FOR  
+    do mongoose.connect giving it the uri and set userNewParser: true
+        and useCreateIndex : true, two settings are wrapped in JSON
+    make a variable called connection and the value should be mongoose.connection
+
+
+make a directory called models inside backend
+    user.model.js  
+    gift.model.js
+
+    in each file, require mongoose and Schema from it
+    make a data model as a new object of Schema class
+    each attribute should have its type and required condition set
+
+    and then make an const variable to make it to be mongoose model, 
+    binding giftSchema object and its name.
+        const gift = mongoose.model('Gift', giftSchema)
+    then export the created schema model
+
+Make a 'routes' directory
+    users.js gift.js
+
++ add router variables on server.js
+    and they should be requiring the routing file FROM CERTAIN ROUTING FILE LOCATION IN THE PROJECT
+    bind them with aimed URL section using app.use('urlSection', routerName)
+
+    require express. router by require('express').Router()
+    also require data model from (../models/gift(or user)/model)
+
+    BUILDING UP THE ROUTER FILE,
+    lets set what to do when the url is at .../user/ 
+    or .../gift/. 
+    router.route('aimed directory').httpMethod
+    http methods we will be settings are get and post.
+
+    to get data from mongo db,
+        requiredModelVariable.find()
+        so it will be Gift.find for gift modeled data, 
+        User.find for user modeled data
+    
+    to post (getting a new JSON sent from user and save it)
+        takes what has been sent as req.body.variables
+        ex) req.body.username or req.body.cause
+        make a new json, the form should be same as data model.
+        fill it with the variables we took from req.body
+
+        save it by JSONobj.save()
+        then send a message as a RESPONSE   
+            ex) () => res.json('Gift added!')
+        then catch error.
