@@ -1,16 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    username: {
+const santaSchema = new Schema({
+    santaname: {
         type: String,
         required: true,
         unique: true,
         trim : true,
         minlength: 3
     },
-    timestamp:true,
-});
+},
+    {
+        timestamp:true,
+    }
+);
 
-const User = mongoose.model('User', userSchema);
-model.experts = User;
+const Santa = mongoose.model('Santa', santaSchema);
+module.exports = Santa;

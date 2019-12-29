@@ -62,3 +62,13 @@ Make a 'routes' directory
         then send a message as a RESPONSE   
             ex) () => res.json('Gift added!')
         then catch error.
+    
+    API test on server side - insomnia
+    set the http method to test, put the server url,
+        -to add
+        write a json block suiting to data model form
+
+        testing get is easy. just set the method to be GET and
+        clean the request lines, send and it returns the list of it
+
+    routing methods with item ids

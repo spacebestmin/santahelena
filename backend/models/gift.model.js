@@ -2,9 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const giftSchema = new Schema({
-    username:{type:String, required: true},
-    cause:{type: String, required: true},
+    santaname:{type:String, required: true},
+    gift:{type: String, required: true},
+    task:{type: String, required: true},
+    deadline:{type: String, required:true},
     link:{type:String, required: true},
+    //date:{type:Date, required:true},
     
 },
 {
@@ -13,5 +16,5 @@ const giftSchema = new Schema({
 
 const Gift = mongoose.model('Gift', giftSchema);
 
-model.exports = Gift;
+module.exports = Gift;
 
