@@ -72,3 +72,10 @@ Make a 'routes' directory
         clean the request lines, send and it returns the list of it
 
     routing methods with item ids
+
+FRONT END
+    create a file named components
+    make 6 component files x-y.component.js
+    write App.js for page rendering
+    first, lets make a navbar
+    in index.js, remove service worker and ./index.js    
