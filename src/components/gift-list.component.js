@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { render } from '@testing-library/react';
+import { throwStatement } from '@babel/types';
 
 const Gift = props => (
     <tr>
@@ -25,8 +26,25 @@ export default class GiftList extends Component {
         this.state = {gifts: []};
     }
 
+    componentDidMount(){
+        axios.get('http://localhost:5000/gifts')
+        then(response => {
+            this.setState({gifts: response.data})
+        })
+        .catch((error))
+    }
+
+    deleteGift(id) {
+        axios.delete('http://localhost:5000/gifts/' + id)
+        .then(res => console.log("the gift is deleted"));
+    }
+
     giftList(){
-        
+        return this.state.gifts.map(currentgift => {
+            return <Gift gift = {currentgift}
+                    deleteGift={this.deleteGift}
+                    key={currentgift._id}/>
+        })
     }
 
     render(){
