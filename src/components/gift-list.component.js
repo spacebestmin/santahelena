@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { render } from '@testing-library/react';
-import { throwStatement } from '@babel/types';
 
 const Gift = props => (
     <tr>
@@ -12,8 +10,8 @@ const Gift = props => (
         <td>{props.gift.deadline}</td>
         <td>{props.gift.link}</td>
         <td>
-            <Link> to={"/edit/"+props.gift._id}edit</Link> | 
-            <a href="#" onClick={() => { props.deleteGift(props.gift._id)}}/>
+            <Link to={"/edit/"+props.gift._id}>edit</Link> | 
+            <a href="#" onClick={() => { props.deleteGift(props.gift._id)}}> delete</a>
         </td>
     </tr>
 )
@@ -27,11 +25,13 @@ export default class GiftList extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/gifts')
+        axios.get('http://localhost:5000/gifts').
         then(response => {
             this.setState({gifts: response.data})
         })
-        .catch((error))
+        .catch((error) => {
+            console.log(error);
+        })
     }
 
     deleteGift(id) {
@@ -54,11 +54,12 @@ export default class GiftList extends Component {
                 <table className="table">
                     <thead className="thead-light">
                     <tr>
-                        <tr>SantaName</tr>
-                        <tr>SantaGift</tr>
-                        <tr>Task</tr>
-                        <tr>Deadline</tr>
-                        <tr>link</tr>
+                        <th>SantaName</th>
+                        <th>SantaGift</th>
+                        <th>Task</th>
+                        <th>Deadline</th>
+                        <th>link</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -22,11 +22,17 @@ function App() {
     <Navbar></Navbar>
   {/*Router helps us to set url paths that will load on the page*/}
   <br/>
-  </div>
+  
   <Route path="/" exact component={GiftList} />
+  <Route path="/create" component={CreateGift}/>
+  
+
+
+
   {/* <Route path="/edit/:id" exact component={EditGift} />
   <Route path="/create/:id" exact component={CreateGift} />
   <Route path="/santas" exact component={CreateSanta} /> */}
+  </div>
 </Router>
 
     );

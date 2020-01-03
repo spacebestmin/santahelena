@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
-import App from '../App';
 
 //react offering router
 
@@ -9,18 +8,16 @@ export default class Navbar extends Component {
         //return can return only one thing, its the api
         return (
             <nav className="navbar navbar-dark bg-dark navbar-expend-lg">
-                <Link to="/" className="navbar-brand">Santa Helena</Link>
-            
+            <Link to="/" className="navbar-brand">Santa Helena</Link>     
             <div className="collapse navbar-collapse">
-                {/* <ul className="">
-                    <li>
-                        <Link to="/" className=""></Link>
+                <ul className="navebar-nav">
+                    <li className="navbar-item">
+                        <Link to="/create" className="">Create New Gift</Link>
                     </li>
-                </ul> */}
-
-
-
-
+                    <li className="navbar-item">
+                        <Link to="/" className="">Create Santa</Link>
+                    </li>
+                </ul>
 
             </div>
             </nav>
