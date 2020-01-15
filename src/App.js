@@ -25,7 +25,7 @@ function App() {
   
   <Route path="/" exact component={GiftList} />
   <Route path="/create" component={CreateGift}/>
-  
+  <Route path="/santa" component={CreateSanta}/>
 
 
 

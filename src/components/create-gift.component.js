@@ -8,6 +8,15 @@ export default class CreateGift extends Component{
         super(props);
 
 
+
+    this.state = {
+        santaname: '',
+        gift:'',
+        task:'',
+        deadline: new Date(),
+        link:'',
+        santas: []
+    }
     }
 
     render(){
@@ -22,27 +31,54 @@ export default class CreateGift extends Component{
                 <form>
                     <div className="form-group">
                         <label>Santa Name</label>
-                        <select> 
+                        <select ref={this.state.santas}
+                        required
+                        className="form-control"
+                        value={this.state.santaname}
+                        >
+                            {
+                                this.state.santas.map(function(santa){
+                                    return <option key={santa} value={santa}>
+                                        {santa}
 
+                                    </option>
+                                })
+                            }
                         </select>
                     </div>
                     <div className="form-group">
                         <label>Gift Name</label>
-                        <input></input>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.gift}
+                        />
                     </div>
                     <div className="form-group">
                         <label>Task</label>
-                        <input></input>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.task}
+                        />
                     </div>
                     <div className="form-group">
                         <label>deadline</label>
                         <div>
                             <DatePicker
+                            selected={this.state.date}
+                            onChange={this.onChangeDate}
                             />
                         </div>
                     </div>
                     <div className="form-group">
                         <label>Link</label>
+                        <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.link}
+                        />
+                        
                     </div>
 
                 </form>

@@ -5,12 +5,13 @@ export default class CreateSanta extends Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            santaname: '',
-        }
-        
         this.onChangeSantaname = this.onChangeSantaname.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+
+        this.state = {
+            santaname: ''
+        }
+        
     }
 
     onChangeSantaname(e){

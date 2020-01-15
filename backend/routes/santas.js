@@ -13,7 +13,7 @@ router.route('/add').post((req, res) => {
 
     newSanta.save()
     .then(() => res.json('Santa added!'))
-    .catch(err => res.status(400).json(`Error : ${err}`));
+    .catch(err => res.status(400).json('Error: ' + err));
 })
 
 module.exports = router;
