@@ -7,7 +7,10 @@ export default class Navbar extends Component {
     render(){
         //return can return only one thing, its the api
         return (
-            <nav className="navbar navbar-dark bg-dark navbar-expend-lg">
+            //errorful example (expand (O) expend (X))
+            // navbar navbar-dark bg-dark navbar-expend-lg
+        
+            <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
                 <Link to="/" className="navbar-brand">Santa Helena</Link>     
                 <div className="collapse navbar-collapse">
                     <ul className="navbar-nav mr-auto">
