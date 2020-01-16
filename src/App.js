@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "./components/navbar.component.js";
 
 import GiftList from "./components/gift-list.component.js"
-import EditGift from "./components/edit-gift.component.js"
+//import EditGift from "./components/edit-gift.component.js"
 import CreateGift from "./components/create-gift.component.js"
 import CreateSanta from "./components/create-santa.component.js"
 

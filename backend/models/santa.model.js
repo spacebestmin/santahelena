@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const santaSchema = new Schema({
     santaname: {
-        type: String,
+        type : String,
         required: true,
-        unique: true,
-        trim : true,
-        minlength: 3,
+        unique:true,
+        trim: true,
+        minlengh: 3
     },
 },
     {

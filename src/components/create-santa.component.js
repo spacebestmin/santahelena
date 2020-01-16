@@ -28,6 +28,7 @@ export default class CreateSanta extends Component{
         }
 
         console.log(santa);
+        
         axios.post('http://localhost:5000/santas/add', santa)
         .then(res => console.log(res.data));
     }
@@ -35,7 +36,9 @@ export default class CreateSanta extends Component{
         return(
             <div>
                 <h3>Create New Wonderful Gorgeouse Another Santa</h3>
-                <form>
+                {/* waiting for update signal from WDS happens
+                when i did not attach onSubmit for the form */}
+                <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>SantaName:</label>
                         <input type="text"
@@ -46,7 +49,7 @@ export default class CreateSanta extends Component{
                             />
                     </div>
                     <div className="form-group">
-                        <input type="submit"/>
+                        <input type="submit" className="btn btb=primary"/>
                     </div>
                 </form>
             </div>
