@@ -11,7 +11,7 @@ const Gift = props => (
         <td>{props.gift.link}</td>
         <td>
             <Link to={"/edit/"+props.gift._id}>edit</Link> | 
-            {/* <a href="#" onClick={() => { props.deleteGift(props.gift._id)}}> delete</a> */}
+            <a href="#" onClick={() => { props.deleteGift(props.gift._id)}}> delete</a>
         </td>
     </tr>
 )
@@ -24,15 +24,17 @@ export default class GiftList extends Component {
         this.state = {gifts: []};
     }
 
-    // componentDidMount(){
-    //     axios.get('http://localhost:5000/gifts').
-    //     then(response => {
-    //         this.setState({gifts: response.data})
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     })
-    // }
+    componentDidMount(){
+        axios.get('http://localhost:5000/gifts/')
+        .then(response => {
+            this.setState({gifts: response.data}) 
+        })
+            // the url gets the response
+            //which is the whole data of the gift table = gifts
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
     deleteGift(id) {
         axios.delete('http://localhost:5000/gifts/' + id)

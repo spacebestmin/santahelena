@@ -18,6 +18,7 @@ export default class CreateSanta extends Component{
         this.setState({
             santaname:e.target.value
         })
+
     }
 
     onSubmit(e){
