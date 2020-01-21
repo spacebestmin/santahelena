@@ -6,9 +6,7 @@ const giftSchema = new Schema({
     gift:{type: String, required: true},
     task:{type: String, required: true},
     deadline:{type: Date, required:true},
-    link:{type:String, required: true},
-    //date:{type:Date, required:true},
-    
+    link:{type:String, required: true},   
 },
 {
     timestamp: true,
