@@ -38,6 +38,18 @@ export default class CreateGift extends Component{
                 })
             }
         })
+
+        axios.get('http://localhost:5000/santas/')
+        .then(response => {
+            if (response.data.length > 0){
+                this.setState({
+                    santas: response.data.map(santa => santa.santaname),
+                })
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     }
     
     onChangeSantaname(e){
@@ -101,19 +113,20 @@ export default class CreateGift extends Component{
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Santa Name</label>
-                        <select ref="userInput"
+                        <select
+                        
                         onChange={this.onChangeSantaname}
                         required
                         className="form-control"
                         value={this.state.santaname}
                         >
-                            {
-                                
+                            {                                
                                 this.state.santas.map(function(santa){
-                                    return <option key={santa} value={santa}>
+                                    return (<option 
+                                    key={santa} 
+                                    value={santa}>
                                         {santa}
-
-                                    </option>
+                                    </option>)
                                 })
                             }
                         </select>

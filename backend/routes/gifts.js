@@ -27,7 +27,7 @@ router.route('/add').post((req, res) => {
 
     newGift.save() //its a promise
     .then(() => res.json('Gift added!'))
-    .catch(err => res.status(400).json(`Error: ${err}`));
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
     router.route('/:id').get((req, res) => {
@@ -40,7 +40,7 @@ router.route('/add').post((req, res) => {
         //Gift : seeking from model
         Gift.findByIdAndDelete(req.params.id)
         .then(() => res.json('Gift deleted!!'))
-        .catch(err => res.status(400).json(`Err : ${err}`));
+        .catch(err => res.status(400).json('Error: ' + err));
     });
 
     router.route("/update/:id").post((req,res) =>{
@@ -55,9 +55,9 @@ router.route('/add').post((req, res) => {
 
         gift.save()
         .then(()=> res.json("gift updated!!"))
-        .catch(err => res.status(400).json(`Err : ${err}`));
+        .catch(err => res.status(400).json('Error: ' + err));
     })
-    .catch(err => res.status(400).json(`Err : ${err}`));
+    .catch(err => res.status(400).json('Error: ' + err));
     });
 //exporting the router
 module.exports = router;
