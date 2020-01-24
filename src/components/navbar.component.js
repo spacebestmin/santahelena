@@ -20,6 +20,9 @@ export default class Navbar extends Component {
                         <li className="navbar-item">
                             <Link to="/santa" className="nav-link">Create Santa</Link>
                         </li>
+                        <li className="navbar-item">
+                            <Link to="/manage" className="nav-link">Manage Santas</Link>
+                        </li>
                     </ul>
 
             </div>

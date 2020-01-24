@@ -9,6 +9,7 @@ import GiftList from "./components/gift-list.component.js"
 import EditGift from "./components/edit-gift.component.js"
 import CreateGift from "./components/create-gift.component.js"
 import CreateSanta from "./components/create-santa.component.js"
+import ManageSanta from "./components/manage-santa.component.js"
 
 //I love bootstrap <3<3<3
 
@@ -27,7 +28,7 @@ function App() {
   <Route path="/create" component={CreateGift}/>
   <Route path="/santa" component={CreateSanta}/>
   <Route path="/edit/:id" component={EditGift} />
-
+  <Route path="/manage" component={ManageSanta} />
 
   {/* <Route path="/edit/:id" exact component={EditGift} />
   <Route path="/create/:id" exact component={CreateGift} />
