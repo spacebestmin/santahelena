@@ -46,14 +46,15 @@ export default class ManageSanta extends Component{
                 <h3>Manage Santas</h3>
                 <table className="table">
                     <thead className="thead-light">
-                        <tr>
-                            <th>SantaName</th>
-                            <th>Action</th>
-                        </tr>
-                        <tbody>
-                            { this.santaList()}
-                        </tbody>
+                    <tr>
+                      <th>SantaName</th>
+                       <th>Action</th>
+                    </tr>
                     </thead>
+                    <tbody>
+                        { this.santaList()}
+                    </tbody>
+                    
 
                 </table>
             </div>

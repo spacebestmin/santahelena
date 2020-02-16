@@ -11,6 +11,7 @@ export default class EditGift extends Component{
         this.onChangeSantaname = this.onChangeSantaname.bind(this);
         this.onChangeGift = this.onChangeGift.bind(this);
         this.onChangeTask = this.onChangeTask.bind(this);
+        this.onChangeLink = this.onChangeLink.bind(this);
         this.onChangeDeadline = this.onChangeDeadline.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
