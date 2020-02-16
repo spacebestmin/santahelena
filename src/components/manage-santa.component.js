@@ -5,7 +5,12 @@ const Santa = props => (
     <tr>
         <td>{props.santa.santaname}</td>
         <td>
-            <a href="#" onClick={() => props.deleteSanta(props.santa._id)}>delete</a>
+            <a href="#" onClick={() => {
+                props.deleteSanta(props.santa._id)
+                window.location = '/manage';
+
+            }
+                }>delete</a>
         </td>
     </tr>
 )

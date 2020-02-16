@@ -33,7 +33,7 @@ export default class CreateSanta extends Component{
         axios.post('http://localhost:5000/santas/add', santa)
         .then(res => console.log(res.data));
 
-        window.location = "/";
+        window.location = "/manage";
     }
     render(){
         return(

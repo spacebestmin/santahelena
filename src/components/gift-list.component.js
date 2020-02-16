@@ -9,9 +9,11 @@ const Gift = props => (
         <td>{props.gift.task}</td>
         <td>{props.gift.deadline}</td>
         <td>{props.gift.link}</td>
+        {/* <td><a href="{props.gift.link}"></a></td> */}
         <td>
             <Link to={"/edit/"+props.gift._id}>edit</Link> | 
             <a href="#" onClick={() => { props.deleteGift(props.gift._id)}}> delete</a>
+            {/* <Link to ={"/delete/"+props.gift._id}>delete</Link> */}
         </td>
     </tr>
 )
@@ -19,7 +21,7 @@ const Gift = props => (
 export default class GiftList extends Component {
     constructor(props){
         super(props);
-
+        
         //what is this for??
         this.state = {gifts: []};
     }
