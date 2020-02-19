@@ -28,6 +28,15 @@ app.use('/santas', santaRouter);
 //wheneven user set the url equal to one of these url, load everything
 //from corresponding router
 
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('src/build'));
+
+    app.get('*', (ewq, res) => {
+        res.sendFile(path.join(__dirname, 'src', 'build', 'index.html'));
+    });
+
+}
+
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
 })
