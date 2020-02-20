@@ -29,17 +29,10 @@ app.use('/santas', santaRouter);
 //from corresponding router
 
 if(process.env.NODE_ENV === 'production') {
-<<<<<<< HEAD
     app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-=======
-    app.use(express.static('src/build'));
-
-    app.get('*', (ewq, res) => {
-        res.sendFile(path.join(__dirname, 'src', 'build', 'index.html'));
->>>>>>> 86fead63... trying one
     });
 
 }
