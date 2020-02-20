@@ -3,13 +3,13 @@ import React from 'react';
 // import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css"
-import Navbar from "./components/navbar.component.js";
+import Navbar from "./components/navbar.component.js.js";
 
-import GiftList from "./components/gift-list.component.js"
-import EditGift from "./components/edit-gift.component.js"
-import CreateGift from "./components/create-gift.component.js"
-import CreateSanta from "./components/create-santa.component.js"
-import ManageSanta from "./components/manage-santa.component.js"
+import GiftList from "./components/gift-list.component.js.js"
+import EditGift from "./components/edit-gift.component.js.js"
+import CreateGift from "./components/create-gift.component.js.js"
+import CreateSanta from "./components/create-santa.component.js.js"
+import ManageSanta from "./components/manage-santa.component.js.js"
 
 //I love bootstrap <3<3<3
 
