@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/spacebestmin/santahelena/issues"
   },
-  "homepage": "https://github.com/spacebestmin/santahelena#readme"
+  "homepage": "https://github.com/spacebestmin/santahelena#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.2"
+  }
 }
