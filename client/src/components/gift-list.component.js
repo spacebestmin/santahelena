@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-const baseUrl = process.env.baseURL || "http://localhost:5000";
+const production = 'santahelena/herokuapp.com'
+const dev = 'http://localhost:5000'
+const baseUrl =(process.env.NODE_ENV ? production : dev);
 
 const Gift = props => (
     <tr>
