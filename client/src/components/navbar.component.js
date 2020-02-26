@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
-const production = 'santahelena/herokuapp.com'
-const dev = 'http://localhost:5000'
-const baseUrl =(process.env.NODE_ENV ? production : dev)
+
 //react offering router
 
 export default class Navbar extends Component {
