@@ -13,7 +13,7 @@ app.use(express.json());
 //allowing us to parse json
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri || process.env.MONGODB_URI, {useNewUrlParser: true, useCreateIndex: true}
+mongoose.connect(process.env.MONGODB_URI || uri, {useNewUrlParser: true, useCreateIndex: true}
     );
 const connection = mongoose.connection;
 connection.once('open', () => {
