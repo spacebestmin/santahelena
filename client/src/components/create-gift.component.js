@@ -4,6 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 //import axios from 'axios';
 
+const baseUrl = process.env.baseURL || "http://localhost:5000";
+
 export default class CreateGift extends Component{
     constructor(props){
         super(props);
@@ -29,7 +31,7 @@ export default class CreateGift extends Component{
     //when the component is mounted, 
     //presetting work for expected proper action of the component
     componentDidMount(){
-        axios.get("http://localhost:5000/santas/")
+        axios.get(baseUrl+'/santas/')
         .then(response => {
             if (response.data.length > 0){
                 this.setState({
@@ -39,7 +41,7 @@ export default class CreateGift extends Component{
             }
         })
 
-        axios.get('http://localhost:5000/santas/')
+        axios.get(baseUrl+'/santas/')
         .then(response => {
             if (response.data.length > 0){
                 this.setState({
@@ -99,7 +101,7 @@ export default class CreateGift extends Component{
 
         console.log(gift);
 
-        axios.post('http://localhost:5000/gifts/add', gift)
+        axios.post(baseUrl+'/gifts/add', gift)
         .then(res => console.log(res.data));
 
         //set the url where the user will see after submitting

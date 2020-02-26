@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 
+const baseUrl = process.env.baseURL || "http://localhost:5000";
+
 export default class EditGift extends Component{
     constructor(props){
         super(props);
@@ -26,7 +28,7 @@ export default class EditGift extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/gifts/'+this.props.match.params.id)
+        axios.get(baseUrl+'/gifts/'+this.props.match.params.id)
         .then(response=> {
             this.setState({
                 santaname: response.data.santaname,
@@ -40,7 +42,7 @@ export default class EditGift extends Component{
             console.log(error);
         })
 
-        axios.get('http://localhost:5000/santas/')
+        axios.get(baseUrl+'/santas/')
         .then(response => {
             if (response.data.length > 0){
                 this.setState({
@@ -62,7 +64,7 @@ export default class EditGift extends Component{
             link:this.state.link
         }
 
-        axios.post('http://localhost:5000/gifts/update/'+this.props.match.params.id, gift)
+        axios.post(baseUrl+'/gifts/update/'+this.props.match.params.id, gift)
         .then(res => console.log(res.data));
 
         window.location = '/';

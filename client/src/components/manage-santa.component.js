@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+const baseUrl = process.env.baseURL || "http://localhost:5000";
 
 const Santa = props => (
     <tr>
@@ -7,7 +8,7 @@ const Santa = props => (
         <td>
             <a href="#" onClick={() => {
                 props.deleteSanta(props.santa._id)
-                window.location = '/manage';
+                window.location = baseUrl+'/manage';
 
             }
                 }>delete</a>
@@ -23,7 +24,7 @@ export default class ManageSanta extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/santas/')
+        axios.get(baseUrl+'/santas/')
         .then(response => {
             this.setState({santas: response.data})
         })
@@ -33,7 +34,7 @@ export default class ManageSanta extends Component{
     }
 
     deleteSanta(id){
-        axios.delete('http://localhost:5000/santas/' + id)
+        axios.delete(baseUrl+'/santas/' + id)
         .then(res => console.log("the santa is deleted"));
     }
 

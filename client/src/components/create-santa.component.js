@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+const baseUrl = process.env.baseURL || "http://localhost:5000";
 
 export default class CreateSanta extends Component{
     constructor(props){
@@ -30,10 +31,10 @@ export default class CreateSanta extends Component{
 
         console.log(santa);
         
-        axios.post('http://localhost:5000/santas/add', santa)
+        axios.post(baseUrl+'/santas/add', santa)
         .then(res => console.log(res.data));
 
-        window.location = "/manage";
+        window.location = baseUrl+"/manage";
     }
     render(){
         return(

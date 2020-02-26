@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+const baseUrl = process.env.baseURL || "http://localhost:5000";
 
 const Gift = props => (
     <tr>
@@ -27,7 +28,7 @@ export default class GiftList extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/gifts/')
+        axios.get(baseUrl+'/gifts/')
         .then(response => {
             this.setState({gifts: response.data}) 
         })
@@ -39,7 +40,7 @@ export default class GiftList extends Component {
     }
 
     deleteGift(id) {
-        axios.delete('http://localhost:5000/gifts/' + id)
+        axios.delete(baseUrl+'/gifts/' + id)
         .then(res => console.log("the gift is deleted"));
     }
 
