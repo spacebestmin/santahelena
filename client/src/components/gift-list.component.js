@@ -13,7 +13,7 @@ const Gift = props => (
         {/* <td><a href="{props.gift.link}"></a></td> */}
         <td>
             <Link to={"/edit/"+props.gift._id}>edit</Link> | 
-            <a href="#" onClick={() => { props.deleteGift(props.gift._id)}}> delete</a>
+            <a href={baseUrl+"/"} onClick={() => { props.deleteGift(props.gift._id)}}> delete</a>
             {/* <Link to ={"/delete/"+props.gift._id}>delete</Link> */}
         </td>
     </tr>
