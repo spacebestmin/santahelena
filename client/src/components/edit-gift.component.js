@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 
-const baseUrl = 'https://santahelena.herokuapp.com/' || "http://localhost:5000";
+const baseUrl = 'https://santahelena.herokuapp.com' || "http://localhost:5000";
 
 export default class EditGift extends Component{
     constructor(props){
