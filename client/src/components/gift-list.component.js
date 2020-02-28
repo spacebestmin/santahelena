@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 const baseUrl = 'https://santahelena.herokuapp.com' || "http://localhost:5000";
 
+
 const Gift = props => (
     <tr>
         <td>{props.gift.santaname}</td>
         <td>{props.gift.gift}</td>
         <td>{props.gift.task}</td>
         <td>{props.gift.deadline}</td>
-        <td><a href="{props.gift.link}">
+        <td><a href={props.gift.link} target="_blank">
         {props.gift.link}</a></td>
         {/* <td><a href="{props.gift.link}"></a></td> */}
         <td>
