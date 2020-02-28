@@ -155,9 +155,9 @@ export default class CreateGift extends Component{
                         <label>Deadline</label>
                         <div>
                             <DatePicker
-                            selected={this.state.date}
+                            selected={this.state.deadline}
                             onChange={this.onChangeDeadline}
-                            value={this.state.deadline}
+                            
                             />
                         </div>
                     </div>
