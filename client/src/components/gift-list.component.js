@@ -9,7 +9,7 @@ const Gift = props => (
         <td>{props.gift.gift}</td>
         <td>{props.gift.task}</td>
         <td>{props.gift.deadline}</td>
-        <td><a href={props.gift.link}>
+        <td><a href="{props.gift.link}">
         {props.gift.link}</a></td>
         {/* <td><a href="{props.gift.link}"></a></td> */}
         <td>
